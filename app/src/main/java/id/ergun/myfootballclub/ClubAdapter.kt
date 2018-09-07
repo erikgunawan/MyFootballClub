@@ -1,6 +1,5 @@
 package id.ergun.myfootballclub
 
-import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.Gravity
 import android.view.View
@@ -10,7 +9,7 @@ import android.widget.TextView
 import com.bumptech.glide.Glide
 import org.jetbrains.anko.*
 
-class ClubAdapter (private val context : Context, private val club_list : List<Club>,
+class ClubAdapter (private val club_list : List<Club>,
                    private val listener: (Club) -> Unit)
     : RecyclerView.Adapter<ClubAdapter.ViewHolder>() {
 
