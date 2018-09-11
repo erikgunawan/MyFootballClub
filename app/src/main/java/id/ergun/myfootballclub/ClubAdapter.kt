@@ -24,8 +24,8 @@ class ClubAdapter (private val club_list : List<Club>,
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
-        lateinit var tvName: TextView
-        lateinit var ivLogo : ImageView
+        private lateinit var tvName: TextView
+        private lateinit var ivLogo : ImageView
 
         fun bindItem(club_list: Club, listener: (Club) -> Unit) {
 

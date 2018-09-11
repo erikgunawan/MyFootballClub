@@ -16,7 +16,7 @@ class ClubDetailActivity : AppCompatActivity() {
         ClubDetailUI(club).setContentView(this)
     }
 
-    class ClubDetailUI(var club : Club) : AnkoComponent<ClubDetailActivity> {
+    class ClubDetailUI(private var club : Club) : AnkoComponent<ClubDetailActivity> {
         override fun createView(ui: AnkoContext<ClubDetailActivity>) = with(ui) {
 
             verticalLayout {

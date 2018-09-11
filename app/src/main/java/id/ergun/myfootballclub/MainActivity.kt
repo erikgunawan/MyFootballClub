@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         initData()
     }
 
-    class MainActivityUI(var club_list : MutableList<Club>) : AnkoComponent<MainActivity> {
+    class MainActivityUI(private var club_list : MutableList<Club>) : AnkoComponent<MainActivity> {
         override fun createView(ui: AnkoContext<MainActivity>) = with(ui) {
 
             verticalLayout {
@@ -34,16 +34,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initData() {
-        val club_name_arr = resources.getStringArray(R.array.club_name_arr)
-        val club_image_arr = resources.obtainTypedArray(R.array.club_image_arr)
-        val club_description_arr = resources.getStringArray(R.array.club_description_arr)
+        val clubNameArr = resources.getStringArray(R.array.club_name_arr)
+        val clubImageArr = resources.obtainTypedArray(R.array.club_image_arr)
+        val clubDescriptionArr = resources.getStringArray(R.array.club_description_arr)
 
         clubList.clear()
 
-        for (i in club_name_arr.indices) {
-            clubList.add(Club(club_name_arr[i], club_image_arr.getResourceId(i, 0), club_description_arr[i]))
+        for (i in clubNameArr.indices) {
+            clubList.add(Club(clubNameArr[i], clubImageArr.getResourceId(i, 0), clubDescriptionArr[i]))
         }
 
-        club_image_arr.recycle()
+        clubImageArr.recycle()
     }
 }
